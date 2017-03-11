@@ -1,0 +1,1 @@
+open_basedir="d:\wamp\gym\gymmanage\webbuilding\www\;D:\UPUPW_K2.1\memcached\;D:\UPUPW_K2.1\phpmyadmin\;D:\UPUPW_K2.1\temp\;C:\windows\Temp\"
