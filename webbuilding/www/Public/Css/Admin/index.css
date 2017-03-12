@@ -1,0 +1,14 @@
+.text-bottom{
+	line-height:5.6em; 
+}
+@media (min-width:992px and max-width:1200px){
+	body,.btn{font-size:21px}
+	h2{font-size:1em;padding:0.2em 0}
+}
+@media (min-width:1200px){
+	body,.btn{font-size:32px}
+	h2{font-size:1.8em;padding:0.5em 0}
+}
+.orange{
+	background-color: rgb(206,175,28);
+}
