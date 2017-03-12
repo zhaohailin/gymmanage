@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
-			WebBuilding_前台主页
+			WebBuilding_前台登录
 		</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="/Public/Css/Common/bootstrap_min.css" />

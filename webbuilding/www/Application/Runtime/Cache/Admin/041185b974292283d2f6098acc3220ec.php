@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>
-			WebBuilding_前台主页
+			WebBuilding_后台登录
 		</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="/Public/Css/Common/bootstrap_min.css" />
@@ -16,7 +16,7 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		
-	<link rel="stylesheet" type="text/css" href="/Public/Css/Home/login.css" />
+	<link rel="stylesheet" type="text/css" href="/Public/Css/Admin/login.css" />
 
 		<!-- jQuery -->
 		<script type="text/javascript" src="/Public/Js/Common/jquery_min.js"></script>
@@ -41,6 +41,6 @@
 
 	</body>
 	
-	<script type="text/javascript" src="/Public/Js/Home/login.js"></script>
+	<script type="text/javascript" src="/Public/Js/Admin/login.js"></script>
 
 </html>
