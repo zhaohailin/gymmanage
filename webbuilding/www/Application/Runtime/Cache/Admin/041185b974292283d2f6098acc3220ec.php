@@ -1,87 +1,304 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>
-			WebBuilding_后台登录
-		</title>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" type="text/css" href="/Public/Css/Common/bootstrap_min.css" />
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<meta charset="utf-8" />
+		<title>登录页面 - Bootstrap后台管理系统模版Ace下载</title>
+		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
+		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- basic styles -->
+
+		<link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/Public/assets/css/font-awesome.min.css" />
+
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="/Public/assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
-		
-	<link rel="stylesheet" type="text/css" href="/Public/Css/Common/animate.min.css" />
-	<link rel="stylesheet" type="text/css" href="/Public/Css/Admin/login.css" />
 
-		<!-- jQuery -->
-		<script type="text/javascript" src="/Public/Js/Common/jquery_min.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script type="text/javascript" src="/Public/Js/Common/bootstrap_min.js"></script>
-		<!-- jquery版本兼容 -->
-		<script type="text/javascript" src="/Public/Js/Common/jquery-migrate-1_1_0.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script type="text/javascript" src="/Public/Js/Common/ie10-viewport-bug-workaround.js"></script>
+		<!-- page specific plugin styles -->
+
+		<!-- fonts -->
+
+		<link rel="stylesheet" href="/Public/assets/css/font-Open-Sans.css" />
+
+		<!-- ace styles -->
+
+		<link rel="stylesheet" href="/Public/assets/css/ace.min.css" />
+		<link rel="stylesheet" href="/Public/assets/css/ace-rtl.min.css" />
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/Public/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+		<script src="/Public/assets/js/html5shiv.js"></script>
+		<script src="/Public/assets/js/respond.min.js"></script>
+		<![endif]-->
 	</head>
-	<body>
-		
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3 col-xs-12">
-					<img id="logo" class="animated bounceIn img-responsive" src="/Public/Img/Common/webbuildinglogo.jpg" alt="">
-					<div class="">
-						<form class="form-horizontal" action="">
-							 <div class="form-group">
-							    <label class="control-label text-right col-xs-3" for="login_user">账&nbsp;&nbsp;&nbsp;号:</label>
-							    <div class="col-xs-9">
-							   		<input type="text" class="form-control" id="login_user" value="" placeholder="请输入账号">
-							    </div>
+
+	<body class="login-layout">
+		<div class="main-container">
+			<div class="main-content">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div class="login-container">
+							<div class="center">
+								<h1>
+									<i class="icon-leaf green"></i>
+									<span class="red">Ace</span>
+									<span class="white">Application</span>
+								</h1>
+								<h4 class="blue">&copy; Company Name</h4>
 							</div>
-							<div class="form-group">
-							    <label class="control-label text-right col-xs-3" for="login_pd">密&nbsp;&nbsp;&nbsp;码:</label>
-							    <div class="col-xs-9">
-							   		<input type="password" class="form-control" id="login_pd" placeholder="请输入密码">
-							    </div>
-							</div>
-							<div class="form-group">
-							    <label class="control-label text-right col-xs-3" for="login_yzm">验证码:</label>
-							    <div class="col-xs-5">
-							   		<input type="text" class="form-control" id="login_user" value="" placeholder="请输入验证码">
-							    </div>
-						   		<div class="col-xs-4">
-									<img class="img-responsive" id="login_verify" src="<?php echo U('Index/verify');?>" alt="verify_code">
-						   		</div>
-							</div>
-							<div class="col-xs-9 col-xs-offset-3">
-								<div class="col-xs-6">
-									<input class="btn btn-primary btn-lg" type="submit" value="登录">
-								</div>
-								<div class="col-xs-6">
-									<input class="btn btn-default btn-lg" type="reset" value="重置">
-								</div>
-							</div>
-						</form>
-					</div>
+
+							<div class="space-6"></div>
+
+							<div class="position-relative">
+								<div id="login-box" class="login-box visible widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<h4 class="header blue lighter bigger">
+												<i class="icon-coffee green"></i>
+												Please Enter Your Information
+											</h4>
+
+											<div class="space-6"></div>
+
+											<form>
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" placeholder="Username" />
+															<i class="icon-user"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" placeholder="Password" />
+															<i class="icon-lock"></i>
+														</span>
+													</label>
+
+													<div class="space"></div>
+
+													<div class="clearfix">
+														<label class="inline">
+															<input type="checkbox" class="ace" />
+															<span class="lbl"> Remember Me</span>
+														</label>
+
+														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+															<i class="icon-key"></i>
+															Login
+														</button>
+													</div>
+
+													<div class="space-4"></div>
+												</fieldset>
+											</form>
+
+											<div class="social-or-login center">
+												<span class="bigger-110">Or Login Using</span>
+											</div>
+
+											<div class="social-login center">
+												<a class="btn btn-primary">
+													<i class="icon-facebook"></i>
+												</a>
+
+												<a class="btn btn-info">
+													<i class="icon-twitter"></i>
+												</a>
+
+												<a class="btn btn-danger">
+													<i class="icon-google-plus"></i>
+												</a>
+											</div>
+										</div><!-- /widget-main -->
+
+										<div class="toolbar clearfix">
+											<div>
+												<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
+													<i class="icon-arrow-left"></i>
+													I forgot my password
+												</a>
+											</div>
+
+											<div>
+												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
+													I want to register
+													<i class="icon-arrow-right"></i>
+												</a>
+											</div>
+										</div>
+									</div><!-- /widget-body -->
+								</div><!-- /login-box -->
+
+								<div id="forgot-box" class="forgot-box widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<h4 class="header red lighter bigger">
+												<i class="icon-key"></i>
+												Retrieve Password
+											</h4>
+
+											<div class="space-6"></div>
+											<p>
+												Enter your email and to receive instructions
+											</p>
+
+											<form>
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" class="form-control" placeholder="Email" />
+															<i class="icon-envelope"></i>
+														</span>
+													</label>
+
+													<div class="clearfix">
+														<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
+															<i class="icon-lightbulb"></i>
+															Send Me!
+														</button>
+													</div>
+												</fieldset>
+											</form>
+										</div><!-- /widget-main -->
+
+										<div class="toolbar center">
+											<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
+												Back to login
+												<i class="icon-arrow-right"></i>
+											</a>
+										</div>
+									</div><!-- /widget-body -->
+								</div><!-- /forgot-box -->
+
+								<div id="signup-box" class="signup-box widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<h4 class="header green lighter bigger">
+												<i class="icon-group blue"></i>
+												New User Registration
+											</h4>
+
+											<div class="space-6"></div>
+											<p> Enter your details to begin: </p>
+
+											<form>
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" class="form-control" placeholder="Email" />
+															<i class="icon-envelope"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" placeholder="Username" />
+															<i class="icon-user"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" placeholder="Password" />
+															<i class="icon-lock"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" placeholder="Repeat password" />
+															<i class="icon-retweet"></i>
+														</span>
+													</label>
+
+													<label class="block">
+														<input type="checkbox" class="ace" />
+														<span class="lbl">
+															I accept the
+															<a href="#">User Agreement</a>
+														</span>
+													</label>
+
+													<div class="space-24"></div>
+
+													<div class="clearfix">
+														<button type="reset" class="width-30 pull-left btn btn-sm">
+															<i class="icon-refresh"></i>
+															Reset
+														</button>
+
+														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
+															Register
+															<i class="icon-arrow-right icon-on-right"></i>
+														</button>
+													</div>
+												</fieldset>
+											</form>
+										</div>
+
+										<div class="toolbar center">
+											<a href="#" onclick="show_box('login-box'); return false;" class="back-to-login-link">
+												<i class="icon-arrow-left"></i>
+												Back to login
+											</a>
+										</div>
+									</div><!-- /widget-body -->
+								</div><!-- /signup-box -->
+							</div><!-- /position-relative -->
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
 			</div>
-		</div>
-	</div>
+		</div><!-- /.main-container -->
 
-	</body>
-	
-	<script type="text/javascript" src="/Public/Js/Admin/login.js"></script>
-	<script>
-		$("#logo").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
-			$(this).addClass("fadeIn")
-		});
-		$("#login_verify").click(function () {
-            var src = $(this).attr("src")+'?'+Math.random();
-            $(this).attr("src",src);
-        });
-	</script>
+		<!-- basic scripts -->
 
+		<!--[if !IE]> -->
+
+		<script src="/Public/assets/js/jquery-2.0.3.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="/Public/assets/js/jquery-1.10.2.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='/Public/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='/Public/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='/Public/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- inline scripts related to this page -->
+
+		<script type="text/javascript">
+			function show_box(id) {
+			 jQuery('.widget-box.visible').removeClass('visible');
+			 jQuery('#'+id).addClass('visible');
+			}
+		</script>
+</body>
 </html>
